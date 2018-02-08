@@ -5,17 +5,12 @@ class Squares
   end
 
   def square_of_sum
-    nums = (1..@num).to_a
-    sum = nums.reduce(:+)
-    return sum ** 2
+    (1..@num).reduce(:+) ** 2
   end
 
   def sum_of_squares
-    total = 0
-    @num.times do | num |
-      total += (num + 1)  ** 2
-    end
-    return total
+    squares = (1..@num).collect { |x| x ** 2 }
+    squares.reduce(:+)
   end
 
   def difference
